@@ -6,10 +6,32 @@ const { isMemberLikeExpression } = require('./util.js')
 
 module.exports = { inspectPrimordialAssignments }
 
+/**
+ * @typedef PrimordialAssignment
+ * @property {import('@babel/traverse').Node} node
+ * @property {import('@babel/traverse').NodePath} path
+ * @property {string[]} memberPath
+ */
+
+/**
+ * @typedef {import('@babel/types').MemberExpression | import('@babel/types').OptionalMemberExpression} MemberLikeExpression
+ */
+
+/**
+ * @typedef {MemberLikeExpression & Omit<MemberLikeExpression, 'computed'> & {computed: false}} NonComputedMemberLikeExpression
+ */
+
+/**
+ *
+ * @param {import('@babel/types').Node} ast
+ * @param {readonly string[]} namedIntrinsics
+ * @returns {PrimordialAssignment[]}
+ */
 function inspectPrimordialAssignments(
   ast,
   namedIntrinsics = defaultNamedIntrinsics
 ) {
+  /** @type {PrimordialAssignment[]} */
   const results = []
   traverse(ast, {
     AssignmentExpression: function (path) {
@@ -47,16 +69,30 @@ function inspectPrimordialAssignments(
   return results
 }
 
+/**
+ *
+ * @param {MemberLikeExpression} node
+ * @returns {string[]}
+ */
 function memberExpressionChainToPath(node) {
+  /** @type {string[]} */
   const path = []
   // walk down property chain
   while (isMemberLikeExpression(node.object)) {
-    path.push(node.property.name)
-    node = node.object
+    if ('name' in node.property) {
+      path.push(node.property.name)
+      node = node.object
+    } else {
+      break
+    }
   }
   // reached the end
-  path.push(node.property.name)
-  path.push(node.object.name)
+  if ('name' in node.property) {
+    path.push(node.property.name)
+  }
+  if ('name' in node.object) {
+    path.push(node.object.name)
+  }
   // fix order
   path.reverse()
   return path

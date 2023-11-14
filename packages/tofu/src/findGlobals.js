@@ -17,7 +17,13 @@ const nonReferenceIdentifiers = [
 
 module.exports = { findGlobals }
 
+/**
+ *
+ * @param {import('@babel/types').Node} ast
+ * @returns {Map<string, import('@babel/traverse').NodePath<import('@babel/types').Identifier|import('@babel/types').ThisExpression>[]>}
+ */
 function findGlobals(ast) {
+  /** @type {ReturnType<typeof findGlobals>} */
   const globals = new Map()
   traverse(ast, {
     // ReferencedIdentifier
@@ -76,13 +82,26 @@ function findGlobals(ast) {
 
   return globals
 
-  function saveGlobal(path, name = path.node.name) {
-    // init entry if needed
-    if (!globals.has(name)) {
-      globals.set(name, [])
+  /**
+   *
+   * @param {import('@babel/traverse').NodePath<import('@babel/types').Identifier|import('@babel/types').ThisExpression>} path
+   * @param {string} [name]
+   */
+  function saveGlobal(path, name) {
+    if ('name' in path.node) {
+      name = path.node.name
     }
-    // append ref
-    const refsForName = globals.get(name)
-    refsForName.push(path)
+    if (name) {
+      // init entry if needed
+      if (!globals.has(name)) {
+        globals.set(name, [])
+      }
+      // append ref
+      const refsForName =
+        /** @type {import('@babel/traverse').NodePath<import('@babel/types').Identifier|import('@babel/types').ThisExpression>[]} */ (
+          globals.get(name)
+        )
+      refsForName.push(path)
+    }
   }
 }

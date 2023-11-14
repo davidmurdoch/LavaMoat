@@ -1,5 +1,11 @@
 module.exports = { codeSampleFromAstNode }
 
+/**
+ *
+ * @param {import('type-fest').Merge<import('@babel/types').Node, {loc: import('@babel/types').SourceLocation}>} node
+ * @param {import('lavamoat-core').LavamoatModuleRecord} moduleRecord
+ * @returns
+ */
 function codeSampleFromAstNode(node, moduleRecord) {
   const result = {}
   const { content } = moduleRecord

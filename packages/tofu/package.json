@@ -5,10 +5,14 @@
   "license": "MIT",
   "dependencies": {
     "@babel/parser": "^7.23.0",
-    "@babel/traverse": "^7.23.2"
+    "@babel/traverse": "^7.23.2",
+    "@babel/types": "^7.23.3",
+    "@types/babel__traverse": "^7.20.4",
+    "type-fest": "^4.7.1"
   },
   "devDependencies": {
-    "deep-equal": "^2.2.1"
+    "deep-equal": "^2.2.1",
+    "lavamoat-core": "^15.0.0"
   },
   "scripts": {
     "lint:deps": "depcheck",
@@ -36,5 +40,6 @@
       "test/*.spec.js"
     ],
     "timeout": "30s"
-  }
+  },
+  "types": "./types/index.d.ts"
 }
