@@ -20,6 +20,11 @@ const rootSlug = '$root$'
 
 module.exports = { rootSlug, createModuleInspector, getDefaultPaths }
 
+/**
+ *
+ * @param {{ isBuiltin?: boolean, includeDebugInfo?: boolean }} opts
+ * @returns
+ */
 function createModuleInspector(opts = {}) {
   const moduleIdToModuleRecord = new Map()
   // "packageToModules" does not include builtin modules
@@ -29,16 +34,29 @@ function createModuleInspector(opts = {}) {
   const packageToNativeModules = new Map()
   const debugInfo = {}
 
-  const inspector = new EventEmitter()
-  inspector.inspectModule = (moduleRecord, opts2 = {}) => {
-    inspectModule(moduleRecord, { ...opts, ...opts2 })
-  }
-  inspector.generatePolicy = (opts2 = {}) => {
-    return generatePolicy({ ...opts, ...opts2 })
-  }
+  const inspector = Object.assign(new EventEmitter(), {
+    /**
+     * @param {import('./moduleRecord').LavamoatModuleRecord} moduleRecord
+     * @param {{isBuiltin?: boolean, includeDebugInfo?: boolean}} opts2
+     */
+    inspectModule: (moduleRecord, opts2 = {}) => {
+      inspectModule(moduleRecord, { ...opts, ...opts2 })
+    },
+    /**
+     * @param {{isBuiltin?: boolean, includeDebugInfo?: boolean}} opts2
+     * @returns {object}
+     */
+    generatePolicy: (opts2 = {}) => {
+      return generatePolicy({ ...opts, ...opts2 })
+    },
+  })
 
   return inspector
 
+  /**
+   * @param {import('./moduleRecord').LavamoatModuleRecord} moduleRecord
+   * @param {{isBuiltin?: boolean, includeDebugInfo?: boolean}} opts2
+   */
   function inspectModule(
     moduleRecord,
     { isBuiltin, includeDebugInfo = false } = {}
@@ -196,7 +214,14 @@ function createModuleInspector(opts = {}) {
   }
 
   function inspectForGlobals(ast, moduleRecord, packageName, includeDebugInfo) {
-    const commonJsRefs = ['require', 'module', 'exports', 'arguments']
+    const commonJsRefs = [
+      'require',
+      'module',
+      'exports',
+      'arguments',
+      'import',
+      'export',
+    ]
     const globalObjPrototypeRefs = Object.getOwnPropertyNames(Object.prototype)
     const foundGlobals = inspectGlobals(ast, {
       // browserify commonjs scope

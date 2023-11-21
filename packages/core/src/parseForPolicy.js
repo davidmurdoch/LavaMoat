@@ -11,7 +11,7 @@ module.exports = { parseForPolicy }
  * @param {function} options.shouldImport
  * @param {object} options.policyOverride
  * @param {bool} options.includeDebugInfo
- * @param {ModuleInspector} options.inspector
+ * @param {ReturnType<import('./generatePolicy').createModuleInspector>} options.inspector
  * @returns {JSON} policy object
  */
 async function parseForPolicy({
