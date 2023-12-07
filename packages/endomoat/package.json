@@ -9,7 +9,8 @@
     "@types/node": "^20.8.5",
     "lavamoat-core": "^15.0.0",
     "ses": "^0.18.8",
-    "type-fest": "^4.4.0"
+    "type-fest": "^4.4.0",
+    "yargs": "^17.7.2"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,9 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "bin": {
+    "endomoat": "./src/cli.js"
   },
   "description": "Converts Lavamoat Policies to Endo Policies",
   "directories": {
@@ -44,13 +48,15 @@
   "exports": {
     ".": "./src/index.js",
     "./attenuator": "./src/default-attenuator.js",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./cli": "./src/cli.js"
   },
   "private": true,
   "devDependencies": {
     "@endo/eslint-plugin": "^0.5.2",
     "@jessie.js/eslint-plugin": "^0.4.0",
     "@types/capture-console": "^1.0.5",
+    "@types/yargs": "^17.0.32",
     "capture-console": "^1.0.2"
   },
   "workspaces": [
