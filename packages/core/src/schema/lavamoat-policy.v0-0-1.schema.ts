@@ -61,6 +61,11 @@ export interface NodeLocation {
   line: number
 }
 
+export type GlobalPolicyRead = 'read'
+export type GlobalPolicyWrite = 'write'
+
+export type GlobalPolicyValue = GlobalPolicyRead | GlobalPolicyWrite | boolean
+
 /**
  * Describe the resources available to your application and direct dependencies
  */
@@ -82,7 +87,7 @@ export interface ResourcePolicy {
  * Globals (including properties using dot notation) accessible to the module; `true` to allow and `false` to deny
  */
 export interface GlobalPolicy {
-  [k: string]: boolean
+  [k: string]: GlobalPolicyValue
 }
 
 /**
