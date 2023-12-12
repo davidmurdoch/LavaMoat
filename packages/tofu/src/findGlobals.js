@@ -18,9 +18,13 @@ const nonReferenceIdentifiers = [
 module.exports = { findGlobals }
 
 /**
+ * @typedef {import('@babel/traverse').NodePath<import('@babel/types').Identifier|import('@babel/types').ThisExpression>} IdentifierOrThisExpressionNodePath
+ */
+
+/**
  *
  * @param {import('@babel/types').Node} ast
- * @returns {Map<string, import('@babel/traverse').NodePath<import('@babel/types').Identifier|import('@babel/types').ThisExpression>[]>}
+ * @returns {Map<string, IdentifierOrThisExpressionNodePath[]>}
  */
 function findGlobals(ast) {
   /** @type {ReturnType<typeof findGlobals>} */
@@ -84,24 +88,19 @@ function findGlobals(ast) {
 
   /**
    *
-   * @param {import('@babel/traverse').NodePath<import('@babel/types').Identifier|import('@babel/types').ThisExpression>} path
+   * @param {IdentifierOrThisExpressionNodePath} path
    * @param {string} [name]
    */
-  function saveGlobal(path, name) {
-    if ('name' in path.node) {
-      name = path.node.name
+  // @ts-ignore - FIXME needs logic changes for type safety
+  function saveGlobal(path, name = path.node.name) {
+    // init entry if needed
+    if (!globals.has(name)) {
+      globals.set(name, [])
     }
-    if (name) {
-      // init entry if needed
-      if (!globals.has(name)) {
-        globals.set(name, [])
-      }
-      // append ref
-      const refsForName =
-        /** @type {import('@babel/traverse').NodePath<import('@babel/types').Identifier|import('@babel/types').ThisExpression>[]} */ (
-          globals.get(name)
-        )
-      refsForName.push(path)
-    }
+    // append ref
+    const refsForName = /** @type {IdentifierOrThisExpressionNodePath[]} */ (
+      globals.get(name)
+    )
+    refsForName.push(path)
   }
 }

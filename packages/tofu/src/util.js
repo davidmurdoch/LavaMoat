@@ -23,9 +23,8 @@ module.exports = {
  */
 
 /**
- *
- * @param {import("@babel/types").LVal} identifierNode
- * @param {import("./inspectPrimordialAssignments").MemberLikeExpression[]} parents
+ * @param {import("@babel/types").Node} identifierNode
+ * @param {import("@babel/types").Node[]} parents
  * @returns
  */
 function getMemberExpressionNesting(identifierNode, parents) {
@@ -33,7 +32,9 @@ function getMemberExpressionNesting(identifierNode, parents) {
   const parentsOnly = parents.slice(0, -1)
   // find unbroken membership chain closest to identifier
   const memberExpressions = getTailmostMatchingChain(
-    parentsOnly,
+    /** @type {import("./inspectPrimordialAssignments").NonComputedMemberLikeExpression[]} */ (
+      parentsOnly
+    ),
     isNonComputedMemberLikeExpression
   ).reverse()
   // find parent of membership chain
@@ -41,11 +42,7 @@ function getMemberExpressionNesting(identifierNode, parents) {
   const topmostMember = hasMembershipChain
     ? memberExpressions[0]
     : identifierNode
-  const topmostMemberIndex = parents.indexOf(
-    /** @type {import("./inspectPrimordialAssignments").MemberLikeExpression} */ (
-      topmostMember
-    )
-  )
+  const topmostMemberIndex = parents.indexOf(topmostMember)
   if (topmostMemberIndex < 1) {
     throw Error('unnexpected value for memberTopIndex')
   }
@@ -230,7 +227,7 @@ function mergePolicy(configA, configB) {
  * @returns {Map<keyof T, T[keyof T]>}
  */
 function objToMap(obj) {
-  return new Map(Object.entries(obj))
+  return /** @type {Map<keyof T, T[keyof T]>} */ (new Map(Object.entries(obj)))
 }
 
 /**

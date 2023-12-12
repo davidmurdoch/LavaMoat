@@ -79,20 +79,15 @@ function memberExpressionChainToPath(node) {
   const path = []
   // walk down property chain
   while (isMemberLikeExpression(node.object)) {
-    if ('name' in node.property) {
-      path.push(node.property.name)
-      node = node.object
-    } else {
-      break
-    }
+    // @ts-ignore - FIXME needs logic changes for type safety
+    path.push(node.property.name)
+    node = node.object
   }
   // reached the end
-  if ('name' in node.property) {
-    path.push(node.property.name)
-  }
-  if ('name' in node.object) {
-    path.push(node.object.name)
-  }
+  // @ts-ignore - FIXME needs logic changes for type safety
+  path.push(node.property.name)
+  // @ts-ignore - FIXME needs logic changes for type safety
+  path.push(node.object.name)
   // fix order
   path.reverse()
   return path

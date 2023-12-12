@@ -74,4 +74,8 @@ module.exports.globalPropertyNames = /** @type {const} */ ([
 ])
 
 // js language keywords that are not global properties
-module.exports.languageRefs = ['this', 'arguments', 'undefined']
+module.exports.languageRefs = /** @type {const} */ ([
+  'this',
+  'arguments',
+  'undefined',
+])
