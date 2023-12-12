@@ -61,6 +61,9 @@ export interface NodeLocation {
   line: number
 }
 
+/**
+ * @deprecated - Use `true` instead
+ */
 export type GlobalPolicyRead = 'read'
 export type GlobalPolicyWrite = 'write'
 
