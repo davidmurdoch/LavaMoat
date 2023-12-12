@@ -307,23 +307,21 @@ const usageDetectors = {
     if (leftSide.type === 'Identifier') {
       const binding = targetPath.scope.getBinding(leftSide.name)
       if (binding) {
-        return [
-          new ReferenceLinkage({
-            path: binding.path,
-            label: 'parent of member',
-          }),
-        ]
+        // @ts-ignore - FIXME needs logic changes for type safety
+        return new ReferenceLinkage({
+          path: binding.path,
+          label: 'parent of member',
+        })
       } else {
         throw new RefOutOfScopeError()
       }
     }
     const leftSidePath = pathLookup.get(leftSide)
-    return [
-      new ReferenceLinkage({
-        path: leftSidePath,
-        label: 'parent of member (unknown)',
-      }),
-    ]
+    // @ts-ignore - FIXME needs logic changes for type safety
+    return new ReferenceLinkage({
+      path: leftSidePath,
+      label: 'parent of member (unknown)',
+    })
   },
 }
 
