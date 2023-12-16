@@ -10,15 +10,15 @@
     "node": "^16.20.0 || ^18.0.0 || ^20.0.0"
   },
   "dependencies": {
-    "json-stable-stringify": "^1.0.2",
+    "json-stable-stringify": "1.0.2",
     "lavamoat-tofu": "^7.0.0",
-    "merge-deep": "^3.0.3",
-    "type-fest": "^4.7.1"
+    "merge-deep": "3.0.3",
+    "type-fest": "4.7.1"
   },
   "devDependencies": {
     "@types/json-stable-stringify": "1.0.36",
-    "ses": "^0.18.8",
-    "tmp-promise": "^3.0.3"
+    "ses": "0.18.8",
+    "tmp-promise": "3.0.3"
   },
   "scripts": {
     "lint:deps": "depcheck",

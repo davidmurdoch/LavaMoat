@@ -12,10 +12,10 @@
   "license": "MIT",
   "dependencies": {
     "@lavamoat/aa": "^4.0.0",
-    "@npmcli/run-script": "^6.0.0",
+    "@npmcli/run-script": "6.0.2",
     "bin-links": "4.0.1",
-    "npm-normalize-package-bin": "^3.0.0",
-    "yargs": "^17.7.2"
+    "npm-normalize-package-bin": "3.0.0",
+    "yargs": "16.2.0"
   },
   "repository": {
     "type": "git",
