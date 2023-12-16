@@ -36,7 +36,7 @@
     "statsvr": "^3.1.1",
     "style-loader": "^3.3.2",
     "three": "^0.125.0",
-    "three-forcegraph": "^1.36.1",
+    "three-forcegraph": "^1.39.4",
     "three-spritetext": "^1.5.1",
     "webpack": "^5.83.1",
     "webpack-cli": "^5.1.1",
