@@ -1,5 +1,12 @@
 # Changelog
 
+## [15.1.0](https://github.com/LavaMoat/LavaMoat/compare/lavamoat-core-v15.0.0...lavamoat-core-v15.1.0) (2023-12-16)
+
+
+### Features
+
+* **core:** ship some types ([#732](https://github.com/LavaMoat/LavaMoat/issues/732)) ([d5de381](https://github.com/LavaMoat/LavaMoat/commit/d5de381edccb622b81dd02f9bd59cae605e71cdf))
+
 ## [15.0.0](https://github.com/LavaMoat/LavaMoat/compare/lavamoat-core-v14.4.1...lavamoat-core-v15.0.0) (2023-10-18)
 
 

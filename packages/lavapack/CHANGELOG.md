@@ -6,6 +6,20 @@
   * dependencies
     * lavamoat-core bumped from ^14.2.2 to ^14.2.3
 
+## [6.0.1](https://github.com/LavaMoat/LavaMoat/compare/lavapack-v6.0.0...lavapack-v6.0.1) (2023-12-16)
+
+
+### Bug Fixes
+
+* **lavapack:** espree should be a dep, not a dev dep ([bd71b06](https://github.com/LavaMoat/LavaMoat/commit/bd71b061b77343f0a8efa16be00b0801de8471a2))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * lavamoat-core bumped from ^15.0.0 to ^15.1.0
+
 ## [6.0.0](https://github.com/LavaMoat/LavaMoat/compare/lavapack-v5.4.1...lavapack-v6.0.0) (2023-10-18)
 
 

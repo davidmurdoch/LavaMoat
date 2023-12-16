@@ -1,6 +1,6 @@
 {
   "name": "@lavamoat/lavapack",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "LavaMoat packer",
   "publishConfig": {
     "access": "public"
@@ -15,7 +15,7 @@
     "convert-source-map": "^2.0.0",
     "espree": "^9.5.2",
     "json-stable-stringify": "^1.0.2",
-    "lavamoat-core": "^15.0.0",
+    "lavamoat-core": "^15.1.0",
     "readable-stream": "^3.6.0",
     "through2": "^4.0.2",
     "umd": "^3.0.3"
