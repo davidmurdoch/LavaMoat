@@ -1,5 +1,27 @@
 # Changelog
 
+## [3.0.0](https://github.com/davidmurdoch/LavaMoat/compare/laverna-v2.1.0...laverna-v3.0.0) (2026-11-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node.js v18 is no longer supported.
+
+### Features
+
+* **laverna:** support Yarn ([#1888](https://github.com/davidmurdoch/LavaMoat/issues/1888)) ([04d2b80](https://github.com/davidmurdoch/LavaMoat/commit/04d2b80ba6d0be262a638779ad83e80641777a5f)), closes [#1883](https://github.com/davidmurdoch/LavaMoat/issues/1883)
+
+
+### Bug Fixes
+
+* add Node.js v24.0.0 to supported engines ([ad9cdcd](https://github.com/davidmurdoch/LavaMoat/commit/ad9cdcdf83ccbda8bf2eba427d0c80f761f47a0a))
+* add Node.js v26.0.0 to engines ([1b115cd](https://github.com/davidmurdoch/LavaMoat/commit/1b115cd2b69a34aa9c3b2206424231a3e9964086))
+* **deps:** fix npm audit issues ([#1853](https://github.com/davidmurdoch/LavaMoat/issues/1853)) ([5ba0f2d](https://github.com/davidmurdoch/LavaMoat/commit/5ba0f2de62aa4feca86d7f96bcce24f76d6aa624))
+* **deps:** update dependency type-fest to v4.40.0 ([#1619](https://github.com/davidmurdoch/LavaMoat/issues/1619)) ([4e20306](https://github.com/davidmurdoch/LavaMoat/commit/4e20306371ae605fc414dd645b8e422a68c71b93))
+* **deps:** update dependency type-fest to v4.40.1 ([#1624](https://github.com/davidmurdoch/LavaMoat/issues/1624)) ([b918dcc](https://github.com/davidmurdoch/LavaMoat/commit/b918dcc7d7ea2b0a4779eecaa7a853c73ecc5246))
+* **deps:** update dependency type-fest to v4.41.0 ([#1657](https://github.com/davidmurdoch/LavaMoat/issues/1657)) ([19e9bf1](https://github.com/davidmurdoch/LavaMoat/commit/19e9bf144c8c43f530501bc500480fed16f995ac))
+* drop Node.js v18 support across the board ([#1886](https://github.com/davidmurdoch/LavaMoat/issues/1886)) ([1190c9b](https://github.com/davidmurdoch/LavaMoat/commit/1190c9b58294abc071eadd7cd14ea11bf63d28b4))
+
 ## [2.1.0](https://github.com/LavaMoat/LavaMoat/compare/laverna-v2.0.0...laverna-v2.1.0) (2026-04-15)
 
 

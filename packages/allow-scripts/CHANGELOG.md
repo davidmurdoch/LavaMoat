@@ -6,6 +6,45 @@
   * dependencies
     * @lavamoat/aa bumped from ^4.0.1 to ^4.1.0
 
+## [6.0.0](https://github.com/davidmurdoch/LavaMoat/compare/allow-scripts-v5.1.0...allow-scripts-v6.0.0) (2026-11-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* **allow-scripts:** no longer matches lower version with the allowed
+* **allow-scripts:** defaults to pinning versions, requires an action to migrate
+* Node.js v18 is no longer supported.
+
+### Features
+
+* **allow-scripts:** add a check command to warn an update is needed in CI ([#1964](https://github.com/davidmurdoch/LavaMoat/issues/1964)) ([e5f6573](https://github.com/davidmurdoch/LavaMoat/commit/e5f657336c78e155c363a820acbe2a6e3588a2c0))
+* **allow-scripts:** change the recommended use of allow-scripts to global install ([#1823](https://github.com/davidmurdoch/LavaMoat/issues/1823)) ([48a1d98](https://github.com/davidmurdoch/LavaMoat/commit/48a1d98bae5c6b38e5fe7c7d7ddadb9b77892034))
+* **allow-scripts:** install scripts pinned to versions ([fcf80c5](https://github.com/davidmurdoch/LavaMoat/commit/fcf80c50e484bdce38a0911736574b967d8c2960))
+
+
+### Bug Fixes
+
+* add Node.js v24.0.0 to supported engines ([ad9cdcd](https://github.com/davidmurdoch/LavaMoat/commit/ad9cdcdf83ccbda8bf2eba427d0c80f761f47a0a))
+* add Node.js v26.0.0 to engines ([1b115cd](https://github.com/davidmurdoch/LavaMoat/commit/1b115cd2b69a34aa9c3b2206424231a3e9964086))
+* **allow-scripts:** fix [#1796](https://github.com/davidmurdoch/LavaMoat/issues/1796) - correct dev flag in setup ([d4f45de](https://github.com/davidmurdoch/LavaMoat/commit/d4f45de0a05360a60f8e25c4d4bdcdd960937bbd))
+* **allow-scripts:** fix issues with --skip-versions backward-compatibility ([#1969](https://github.com/davidmurdoch/LavaMoat/issues/1969)) ([e68c877](https://github.com/davidmurdoch/LavaMoat/commit/e68c877af251b81c4cd2be97d81226608d12fa60))
+* **allow-scripts:** fix migration logic for v5 ([62f17b4](https://github.com/davidmurdoch/LavaMoat/commit/62f17b4e7c2a363cc11410b69c30708f97d320c1))
+* **allow-scripts:** usability improvements/fixes ([#1941](https://github.com/davidmurdoch/LavaMoat/issues/1941)) ([0bd9805](https://github.com/davidmurdoch/LavaMoat/commit/0bd98057ca5a54fc9d9ae679048e1e310d6cb8a7))
+* Bump yargs ([#2027](https://github.com/davidmurdoch/LavaMoat/issues/2027)) ([affd672](https://github.com/davidmurdoch/LavaMoat/commit/affd6727aa29111456676eda65e40303da621f62))
+* **deps:** fix npm audit issues ([#1853](https://github.com/davidmurdoch/LavaMoat/issues/1853)) ([5ba0f2d](https://github.com/davidmurdoch/LavaMoat/commit/5ba0f2de62aa4feca86d7f96bcce24f76d6aa624))
+* **deps:** update dependency @npmcli/run-script to v10.0.4 ([#1917](https://github.com/davidmurdoch/LavaMoat/issues/1917)) ([8c834d7](https://github.com/davidmurdoch/LavaMoat/commit/8c834d7f2d60b493a607ad692e2683b42551c62c))
+* **deps:** update dependency type-fest to v4.40.0 ([#1619](https://github.com/davidmurdoch/LavaMoat/issues/1619)) ([4e20306](https://github.com/davidmurdoch/LavaMoat/commit/4e20306371ae605fc414dd645b8e422a68c71b93))
+* **deps:** update dependency type-fest to v4.40.1 ([#1624](https://github.com/davidmurdoch/LavaMoat/issues/1624)) ([b918dcc](https://github.com/davidmurdoch/LavaMoat/commit/b918dcc7d7ea2b0a4779eecaa7a853c73ecc5246))
+* **deps:** update dependency type-fest to v4.41.0 ([#1657](https://github.com/davidmurdoch/LavaMoat/issues/1657)) ([19e9bf1](https://github.com/davidmurdoch/LavaMoat/commit/19e9bf144c8c43f530501bc500480fed16f995ac))
+* drop Node.js v18 support across the board ([#1886](https://github.com/davidmurdoch/LavaMoat/issues/1886)) ([1190c9b](https://github.com/davidmurdoch/LavaMoat/commit/1190c9b58294abc071eadd7cd14ea11bf63d28b4))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @lavamoat/aa bumped from ^5.0.1 to ^6.0.0
+
 ## [5.1.0](https://github.com/LavaMoat/LavaMoat/compare/allow-scripts-v5.0.2...allow-scripts-v5.1.0) (2026-06-25)
 
 

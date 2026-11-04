@@ -1,5 +1,49 @@
 # Changelog
 
+## [10.0.0](https://github.com/davidmurdoch/LavaMoat/compare/lavamoat-tofu-v9.1.0...lavamoat-tofu-v10.0.0) (2026-11-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node.js v18 is no longer supported.
+
+### Features
+
+* **core:** add informative errors when the result of policy merge contains invalid entries ([#1848](https://github.com/davidmurdoch/LavaMoat/issues/1848)) ([fefd457](https://github.com/davidmurdoch/LavaMoat/commit/fefd457d53c2944fe3d2ee719cd741f5eafb8987))
+* **tofu:** enable deep dependency analysis of ES modules ([e5d1818](https://github.com/davidmurdoch/LavaMoat/commit/e5d181806788134b9b0b37ef58b0576056ac215a))
+* **tofu:** Ignore cjs-module-lexer exports annotation ([#2129](https://github.com/davidmurdoch/LavaMoat/issues/2129)) ([7ccfb1f](https://github.com/davidmurdoch/LavaMoat/commit/7ccfb1f28efc475522fd03a17b0bdc9c941a1693))
+
+
+### Bug Fixes
+
+* add Node.js v24.0.0 to supported engines ([ad9cdcd](https://github.com/davidmurdoch/LavaMoat/commit/ad9cdcdf83ccbda8bf2eba427d0c80f761f47a0a))
+* add Node.js v26.0.0 to engines ([1b115cd](https://github.com/davidmurdoch/LavaMoat/commit/1b115cd2b69a34aa9c3b2206424231a3e9964086))
+* **deps:** update babel monorepo ([afc9fe5](https://github.com/davidmurdoch/LavaMoat/commit/afc9fe5fef98c53abe014ff657a1d4f59883abe8))
+* **deps:** update babel monorepo ([#1680](https://github.com/davidmurdoch/LavaMoat/issues/1680)) ([9739051](https://github.com/davidmurdoch/LavaMoat/commit/973905160650c659b567088aeef9c44ec814fd7c))
+* **deps:** update babel monorepo ([#1982](https://github.com/davidmurdoch/LavaMoat/issues/1982)) ([5b375cb](https://github.com/davidmurdoch/LavaMoat/commit/5b375cb85d85bc3e37962eae5836b67de9ed474c))
+* **deps:** update babel monorepo to v7.26.10 ([#1561](https://github.com/davidmurdoch/LavaMoat/issues/1561)) ([2757717](https://github.com/davidmurdoch/LavaMoat/commit/275771754578647346da1ece0f86afaabdd5de36))
+* **deps:** update babel monorepo to v7.26.9 ([6a9dc73](https://github.com/davidmurdoch/LavaMoat/commit/6a9dc735f18a5b95e82b86ec2bd466ee4433172f))
+* **deps:** update babel monorepo to v7.27.0 ([#1589](https://github.com/davidmurdoch/LavaMoat/issues/1589)) ([efd83d7](https://github.com/davidmurdoch/LavaMoat/commit/efd83d7ea7a5f5f9d2157248d4e2f8b7f9c48c56))
+* **deps:** update babel monorepo to v7.27.3 ([#1672](https://github.com/davidmurdoch/LavaMoat/issues/1672)) ([72cb642](https://github.com/davidmurdoch/LavaMoat/commit/72cb6424bb5acb16655562deaefff8ef2cf2168e))
+* **deps:** update babel monorepo to v7.29.7 ([#2010](https://github.com/davidmurdoch/LavaMoat/issues/2010)) ([9627a86](https://github.com/davidmurdoch/LavaMoat/commit/9627a86d477d9c70b387b860899a30fbbc0ad479))
+* **deps:** update definitelytyped ([2eab347](https://github.com/davidmurdoch/LavaMoat/commit/2eab34797e14fa0ff2d2b0aa6fd1ec77cc490900))
+* **deps:** update definitelytyped ([#1574](https://github.com/davidmurdoch/LavaMoat/issues/1574)) ([6c2d54e](https://github.com/davidmurdoch/LavaMoat/commit/6c2d54e851ea24a9482a52018b5e0d84716f87b6))
+* **deps:** update dependency type-fest to v4.40.0 ([#1619](https://github.com/davidmurdoch/LavaMoat/issues/1619)) ([4e20306](https://github.com/davidmurdoch/LavaMoat/commit/4e20306371ae605fc414dd645b8e422a68c71b93))
+* **deps:** update dependency type-fest to v4.40.1 ([#1624](https://github.com/davidmurdoch/LavaMoat/issues/1624)) ([b918dcc](https://github.com/davidmurdoch/LavaMoat/commit/b918dcc7d7ea2b0a4779eecaa7a853c73ecc5246))
+* **deps:** update dependency type-fest to v4.41.0 ([#1657](https://github.com/davidmurdoch/LavaMoat/issues/1657)) ([19e9bf1](https://github.com/davidmurdoch/LavaMoat/commit/19e9bf144c8c43f530501bc500480fed16f995ac))
+* drop Node.js v18 support across the board ([#1886](https://github.com/davidmurdoch/LavaMoat/issues/1886)) ([1190c9b](https://github.com/davidmurdoch/LavaMoat/commit/1190c9b58294abc071eadd7cd14ea11bf63d28b4))
+* **tofu:** Deprecate codeSampleFromAstNode and undo breaking change ([b43a23d](https://github.com/davidmurdoch/LavaMoat/commit/b43a23dbedeff3583c2425891a51f1ef0a434bc8))
+* **tofu:** stop treating float typed arrays as primordials ([#2120](https://github.com/davidmurdoch/LavaMoat/issues/2120)) ([a299274](https://github.com/davidmurdoch/LavaMoat/commit/a299274b20d3c85d5418cb5d6ad3a23a94980750))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @lavamoat/types bumped from ^2.0.0 to ^3.0.0
+  * peerDependencies
+    * lavamoat-core bumped from >15.4.0 to >20.0.0
+
 ## [9.1.0](https://github.com/LavaMoat/LavaMoat/compare/lavamoat-tofu-v9.0.4...lavamoat-tofu-v9.1.0) (2026-10-08)
 
 

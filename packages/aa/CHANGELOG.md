@@ -1,5 +1,23 @@
 # Changelog
 
+## [6.0.0](https://github.com/davidmurdoch/LavaMoat/compare/aa-v5.0.1...aa-v6.0.0) (2026-11-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node.js v18 is no longer supported.
+
+### Bug Fixes
+
+* **aa:** avoid colliding symlinks between tests - cleanup was async and overlapping ([#1747](https://github.com/davidmurdoch/LavaMoat/issues/1747)) ([f246c74](https://github.com/davidmurdoch/LavaMoat/commit/f246c747efc020192fc76d2c49ad16455bdc15ca))
+* **aa:** normalize root path to not contain a trailing slash regardless of what is provided in input ([#1882](https://github.com/davidmurdoch/LavaMoat/issues/1882)) ([567c2b8](https://github.com/davidmurdoch/LavaMoat/commit/567c2b8709b0c834e234d5962a7cbe5820b22928))
+* **aa:** upgrade resolve to v1.22.11 ([#1885](https://github.com/davidmurdoch/LavaMoat/issues/1885)) ([dec8e2a](https://github.com/davidmurdoch/LavaMoat/commit/dec8e2a760490168d8c3085df58bda708995ff35))
+* add Node.js v24.0.0 to supported engines ([ad9cdcd](https://github.com/davidmurdoch/LavaMoat/commit/ad9cdcdf83ccbda8bf2eba427d0c80f761f47a0a))
+* add Node.js v26.0.0 to engines ([1b115cd](https://github.com/davidmurdoch/LavaMoat/commit/1b115cd2b69a34aa9c3b2206424231a3e9964086))
+* **deps:** update dependency resolve to v1.22.12 ([#1951](https://github.com/davidmurdoch/LavaMoat/issues/1951)) ([4a06108](https://github.com/davidmurdoch/LavaMoat/commit/4a06108834c81c3526385fc4578a44e19caab1cd))
+* drop Node.js v18 support across the board ([#1886](https://github.com/davidmurdoch/LavaMoat/issues/1886)) ([1190c9b](https://github.com/davidmurdoch/LavaMoat/commit/1190c9b58294abc071eadd7cd14ea11bf63d28b4))
+* performant implementation of getPackageDirForModulePath in aa and minor memoization in lavamoat-node ([#1878](https://github.com/davidmurdoch/LavaMoat/issues/1878)) ([467c248](https://github.com/davidmurdoch/LavaMoat/commit/467c248a80b4706b6f51da13fca67d1a64c2dc91))
+
 ## [5.0.1](https://github.com/LavaMoat/LavaMoat/compare/aa-v5.0.0...aa-v5.0.1) (2026-04-16)
 
 

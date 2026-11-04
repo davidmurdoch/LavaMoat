@@ -1,5 +1,28 @@
 # Changelog
 
+## [3.0.0](https://github.com/davidmurdoch/LavaMoat/compare/types-v2.0.0...types-v3.0.0) (2026-11-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* **types:** expand LavaMoatPolicy.include
+* Node.js v18 is no longer supported.
+
+### Features
+
+* **types:** add `include` property to LavaMoatPolicy ([3721cc7](https://github.com/davidmurdoch/LavaMoat/commit/3721cc7981ec45dc0267ed348f24bc2e913d5e08))
+* **types:** expand LavaMoatPolicy.include ([34e81a9](https://github.com/davidmurdoch/LavaMoat/commit/34e81a993e2e8b713a07a4d6088ce045a088787c))
+* **webpack,core:** Add a meta field to policy resource, report webpack optimizations to it. ([a53b434](https://github.com/davidmurdoch/LavaMoat/commit/a53b434e21e074d2261a4e84b85e33fe8aa87278))
+
+
+### Bug Fixes
+
+* add Node.js v26.0.0 to engines ([1b115cd](https://github.com/davidmurdoch/LavaMoat/commit/1b115cd2b69a34aa9c3b2206424231a3e9964086))
+* **deps:** update babel monorepo ([#1680](https://github.com/davidmurdoch/LavaMoat/issues/1680)) ([9739051](https://github.com/davidmurdoch/LavaMoat/commit/973905160650c659b567088aeef9c44ec814fd7c))
+* **deps:** update babel monorepo to v7.29.7 ([#2010](https://github.com/davidmurdoch/LavaMoat/issues/2010)) ([9627a86](https://github.com/davidmurdoch/LavaMoat/commit/9627a86d477d9c70b387b860899a30fbbc0ad479))
+* drop Node.js v18 support across the board ([#1886](https://github.com/davidmurdoch/LavaMoat/issues/1886)) ([1190c9b](https://github.com/davidmurdoch/LavaMoat/commit/1190c9b58294abc071eadd7cd14ea11bf63d28b4))
+* **types:** remove global Object.hasOwn type ([ee9f86b](https://github.com/davidmurdoch/LavaMoat/commit/ee9f86b764b2a18b5863cd769d545692420ebf5a)), closes [#1817](https://github.com/davidmurdoch/LavaMoat/issues/1817)
+
 ## [2.0.0](https://github.com/LavaMoat/LavaMoat/compare/types-v1.0.2...types-v2.0.0) (2026-09-24)
 
 
