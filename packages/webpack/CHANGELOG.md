@@ -18,6 +18,92 @@
   * dependencies
     * lavamoat-core bumped from ^15.2.0 to ^15.2.1
 
+## [4.0.0](https://github.com/davidmurdoch/LavaMoat/compare/webpack-v3.0.1...webpack-v4.0.0) (2026-11-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* **node:** The API of `generatePolicy()` has changed; instead of resolving with a `LavaMoatPolicy`, it now resolves with an object having properties `policy: LavaMoatPolicy` and `hasWarnings: boolean`. This only affects programmatic consumption of `@lavamoat/node`. To migrate, destructure `policy` from the resolved object. `generatePolicy()` no longer accepts `write`/`writableFs`  options and does not write policy to disk; to write a policy, use `writePolicy `imported from `@lavamoat/node`.
+* Node.js v18 is no longer supported.
+
+### Features
+
+* Add opt-in flag to overwrite policy.json with overrides ([#2061](https://github.com/davidmurdoch/LavaMoat/issues/2061)) ([c4760e6](https://github.com/davidmurdoch/LavaMoat/commit/c4760e62f60b36cbd5a47e4895498a6abf1eb669))
+* **node:** use @endo/parser-pipeline ([9fe2cce](https://github.com/davidmurdoch/LavaMoat/commit/9fe2cceb6a969c2df9a5e5511527b7cf4825fb19))
+* **webpack,core:** Add a meta field to policy resource, report webpack optimizations to it. ([a53b434](https://github.com/davidmurdoch/LavaMoat/commit/a53b434e21e074d2261a4e84b85e33fe8aa87278))
+* **webpack:** add explicit error messages when a compilation concludes with nothing to protect ([f12985f](https://github.com/davidmurdoch/LavaMoat/commit/f12985f15a46e0d022d9caef8a0e5e646529575c))
+* **webpack:** add generatePolicyOnly option ([#1789](https://github.com/davidmurdoch/LavaMoat/issues/1789)) ([72900cd](https://github.com/davidmurdoch/LavaMoat/commit/72900cd22a954a15d9fe96a8bd4b2f844ba3797c))
+* **webpack:** capture importScripts reference for use in runtime despite scuttling ([#2070](https://github.com/davidmurdoch/LavaMoat/issues/2070)) ([e9c0c48](https://github.com/davidmurdoch/LavaMoat/commit/e9c0c481aba7ff9e4cb3eb087ba88c17d1d4e58e))
+* **webpack:** defend webpack runtime from scuttling ([#1740](https://github.com/davidmurdoch/LavaMoat/issues/1740)) ([0f094bd](https://github.com/davidmurdoch/LavaMoat/commit/0f094bd38a1a2c159d5f49864ef97ec57403a43f))
+* **webpack:** document and officially release scuttling in webpack plugin ([#1829](https://github.com/davidmurdoch/LavaMoat/issues/1829)) ([9c83030](https://github.com/davidmurdoch/LavaMoat/commit/9c83030d97371478bf59b10d636e63168bd8473d))
+* **webpack:** enable syntax checks by default, check prior to concatenation. ([e74a55b](https://github.com/davidmurdoch/LavaMoat/commit/e74a55bdc7f83739d8d1fec0b3c5f6852470c6cc))
+* **webpack:** null runtime ([4374b7a](https://github.com/davidmurdoch/LavaMoat/commit/4374b7a65ef551d123396b32e78cd6fd976ecd8e))
+* **webpack:** override the devtool setting that is likely to break lavamoat ([#1933](https://github.com/davidmurdoch/LavaMoat/issues/1933)) ([7a724de](https://github.com/davidmurdoch/LavaMoat/commit/7a724de81570f1e44ec366b14d87b5c3011386a9))
+* **webpack:** prevent webpack from eliminating reexports and failing policy enforcement ([#1827](https://github.com/davidmurdoch/LavaMoat/issues/1827)) ([5f4d4fc](https://github.com/davidmurdoch/LavaMoat/commit/5f4d4fcdf6395bd749918d2b6bed7c5e822629e2))
+* **webpack:** properly expose types for the plugin ([#1741](https://github.com/davidmurdoch/LavaMoat/issues/1741)) ([abd4450](https://github.com/davidmurdoch/LavaMoat/commit/abd445066bd698ada041bc717b8ebcee5ea6b296))
+* **webpack:** repair for window.event deprecated leaky poperty ([#1785](https://github.com/davidmurdoch/LavaMoat/issues/1785)) ([86d944b](https://github.com/davidmurdoch/LavaMoat/commit/86d944bfc0f65e5d27c6f598add72016de579565))
+* **webpack:** repairs for globals that need more than unwrap from core ([#1751](https://github.com/davidmurdoch/LavaMoat/issues/1751)) ([86ad964](https://github.com/davidmurdoch/LavaMoat/commit/86ad964f6b1d33950aea10849052e8cfc8459663))
+* **webpack:** sourcemap-preserving evasive transforms ([#1965](https://github.com/davidmurdoch/LavaMoat/issues/1965)) ([334e2f4](https://github.com/davidmurdoch/LavaMoat/commit/334e2f4fcef1d5d0c5372888fa87e9bb77471461))
+* **webpack:** static shims for runtime, runtimeConfigurationPerChunk_experimental to control embedded runtime options ([#1792](https://github.com/davidmurdoch/LavaMoat/issues/1792)) ([c69a08d](https://github.com/davidmurdoch/LavaMoat/commit/c69a08d5af47e20ee0580fa5f0fcc804cb6d6928))
+* **webpack:** unlockedChunksUnsafe option to refrain from protecting selected chunks ([#1375](https://github.com/davidmurdoch/LavaMoat/issues/1375)) ([1f24683](https://github.com/davidmurdoch/LavaMoat/commit/1f24683e2e6cddefbc492c0925d0d7d5e3b995c0))
+* **webpack:** use the final module info in connections to handle the optimizations webpack sideEffect option does. wip ([9c7b305](https://github.com/davidmurdoch/LavaMoat/commit/9c7b3050460b4cc79b04ac422bdfb69540893bd9))
+* **webpack:** webpack context modules and chunk lazy loading support ([#1553](https://github.com/davidmurdoch/LavaMoat/issues/1553)) ([3602f65](https://github.com/davidmurdoch/LavaMoat/commit/3602f6598196ec99287fe239aa1708d9f80c0e0c))
+
+
+### Bug Fixes
+
+* add Node.js v24.0.0 to supported engines ([ad9cdcd](https://github.com/davidmurdoch/LavaMoat/commit/ad9cdcdf83ccbda8bf2eba427d0c80f761f47a0a))
+* add Node.js v26.0.0 to engines ([1b115cd](https://github.com/davidmurdoch/LavaMoat/commit/1b115cd2b69a34aa9c3b2206424231a3e9964086))
+* **core,webpack:** remove deprecated lockdown options ([efec539](https://github.com/davidmurdoch/LavaMoat/commit/efec5391eec838689ce2426de617571d0f276f2c)), closes [#1578](https://github.com/davidmurdoch/LavaMoat/issues/1578)
+* **core:** block circular global object endowments ([#1505](https://github.com/davidmurdoch/LavaMoat/issues/1505)) ([6745a0e](https://github.com/davidmurdoch/LavaMoat/commit/6745a0edee85171e4062aaec31d7f25bf3a97e46))
+* **deps:** update babel monorepo ([afc9fe5](https://github.com/davidmurdoch/LavaMoat/commit/afc9fe5fef98c53abe014ff657a1d4f59883abe8))
+* **deps:** update babel monorepo ([#1680](https://github.com/davidmurdoch/LavaMoat/issues/1680)) ([9739051](https://github.com/davidmurdoch/LavaMoat/commit/973905160650c659b567088aeef9c44ec814fd7c))
+* **deps:** update babel monorepo ([#1982](https://github.com/davidmurdoch/LavaMoat/issues/1982)) ([5b375cb](https://github.com/davidmurdoch/LavaMoat/commit/5b375cb85d85bc3e37962eae5836b67de9ed474c))
+* **deps:** update babel monorepo to v7.26.9 ([6a9dc73](https://github.com/davidmurdoch/LavaMoat/commit/6a9dc735f18a5b95e82b86ec2bd466ee4433172f))
+* **deps:** update babel monorepo to v7.27.0 ([#1589](https://github.com/davidmurdoch/LavaMoat/issues/1589)) ([efd83d7](https://github.com/davidmurdoch/LavaMoat/commit/efd83d7ea7a5f5f9d2157248d4e2f8b7f9c48c56))
+* **deps:** update babel monorepo to v7.29.7 ([#2010](https://github.com/davidmurdoch/LavaMoat/issues/2010)) ([9627a86](https://github.com/davidmurdoch/LavaMoat/commit/9627a86d477d9c70b387b860899a30fbbc0ad479))
+* **deps:** update definitelytyped ([2eab347](https://github.com/davidmurdoch/LavaMoat/commit/2eab34797e14fa0ff2d2b0aa6fd1ec77cc490900))
+* **deps:** update dependency json-stable-stringify to v1.3.0 ([#1613](https://github.com/davidmurdoch/LavaMoat/issues/1613)) ([f9314d1](https://github.com/davidmurdoch/LavaMoat/commit/f9314d1a238d31a0164356c1c6bd6f6e36246d56))
+* **deps:** update dependency ses to v1.12.0 [security] ([#1605](https://github.com/davidmurdoch/LavaMoat/issues/1605)) ([881ae86](https://github.com/davidmurdoch/LavaMoat/commit/881ae86b9a4c27ab60a3c76a4a69f5de246eb2ed))
+* **deps:** update dependency ses to v1.14.0 ([#1746](https://github.com/davidmurdoch/LavaMoat/issues/1746)) ([3e4b834](https://github.com/davidmurdoch/LavaMoat/commit/3e4b834df3430d9f919e7df31f42d23e9b6bb352))
+* **deps:** upgrade ses ([83f704a](https://github.com/davidmurdoch/LavaMoat/commit/83f704acbfc175a5bc1837752b3b52e597a0d5ad))
+* **deps:** upgrade ses This upgrades `ses` to v2.3.0 across the board. ([#2111](https://github.com/davidmurdoch/LavaMoat/issues/2111)) ([32d830b](https://github.com/davidmurdoch/LavaMoat/commit/32d830b947c0e9a0fab4195cc9c6083e9b7b3714))
+* **deps:** upgrade ses, @types/node, endo ([c6eca11](https://github.com/davidmurdoch/LavaMoat/commit/c6eca11b3cfc873b7f5776b0d08f6f329b48e490))
+* drop Node.js v18 support across the board ([#1886](https://github.com/davidmurdoch/LavaMoat/issues/1886)) ([1190c9b](https://github.com/davidmurdoch/LavaMoat/commit/1190c9b58294abc071eadd7cd14ea11bf63d28b4))
+* performant implementation of getPackageDirForModulePath in aa and minor memoization in lavamoat-node ([#1878](https://github.com/davidmurdoch/LavaMoat/issues/1878)) ([467c248](https://github.com/davidmurdoch/LavaMoat/commit/467c248a80b4706b6f51da13fca67d1a64c2dc91))
+* **tofu:** stop treating float typed arrays as primordials ([#2120](https://github.com/davidmurdoch/LavaMoat/issues/2120)) ([a299274](https://github.com/davidmurdoch/LavaMoat/commit/a299274b20d3c85d5418cb5d6ad3a23a94980750))
+* typescript got confused into creating a cyclic reference in types for scuttling in core ([5e25a36](https://github.com/davidmurdoch/LavaMoat/commit/5e25a361094a7b3ed7ae2744cd405910f9dc3baa))
+* upgrade ses to v1.11.0 ([a12dae1](https://github.com/davidmurdoch/LavaMoat/commit/a12dae13e8c7f70082199ba186659ea413e82ded))
+* **webpack:** adapt scuttling config for runtime regardless of where it comes from ([#1839](https://github.com/davidmurdoch/LavaMoat/issues/1839)) ([b1ad321](https://github.com/davidmurdoch/LavaMoat/commit/b1ad321cb8b3e36a44fa661a7d2f5899f7a08fdc))
+* **webpack:** add j to the list of harmless fields on __webpack_require__ ([#1838](https://github.com/davidmurdoch/LavaMoat/issues/1838)) ([7035a40](https://github.com/davidmurdoch/LavaMoat/commit/7035a404627d038e9ff7b4d5fd2e7b7ed8928194))
+* **webpack:** adjust MessageEvent repair to reliably work in the bizarre context of Firefox webextension contentscript ([#1830](https://github.com/davidmurdoch/LavaMoat/issues/1830)) ([33d83d7](https://github.com/davidmurdoch/LavaMoat/commit/33d83d7402f9b914c7f4d7f9cd18f979c2f406c5))
+* **webpack:** avoid scuttling the global Webpack uses for sharing chunks ([#1762](https://github.com/davidmurdoch/LavaMoat/issues/1762)) ([6f39c95](https://github.com/davidmurdoch/LavaMoat/commit/6f39c95407a280aa13bf90adb634f8b86821e0f0))
+* **webpack:** do not completely disable sourcemaps ([#1935](https://github.com/davidmurdoch/LavaMoat/issues/1935)) ([5bbb0d7](https://github.com/davidmurdoch/LavaMoat/commit/5bbb0d7c28925c419b7d9d0667ecb5f26ceaa182))
+* **webpack:** expose dn and ns utils for ESM spec compatibility on the runtime global ([#2115](https://github.com/davidmurdoch/LavaMoat/issues/2115)) ([054890a](https://github.com/davidmurdoch/LavaMoat/commit/054890a52ae72aa598b1c82a677f2d665a3d81f9))
+* **webpack:** fix how ambient asset files requests are filtered ([#1739](https://github.com/davidmurdoch/LavaMoat/issues/1739)) ([3f914cf](https://github.com/davidmurdoch/LavaMoat/commit/3f914cf3716d3a4978a80f419fb265db10fc0ae6))
+* **webpack:** fix the naive assumption that there can only be 1 module with a certain path ([#1793](https://github.com/davidmurdoch/LavaMoat/issues/1793)) ([262bb3d](https://github.com/davidmurdoch/LavaMoat/commit/262bb3d61016b42977d0c21c83b22cfbbd78a3e9))
+* **webpack:** handle moduleID/path duplication scenarios at build time ([6aefe85](https://github.com/davidmurdoch/LavaMoat/commit/6aefe85cb33f2433817f70163f53e5b3164f2228))
+* **webpack:** import types from ses ([78aca55](https://github.com/davidmurdoch/LavaMoat/commit/78aca5583adc5366c8717fd196b72bdd828b38ed))
+* **webpack:** MessageEvent repair should not prevent further overrides ([#1787](https://github.com/davidmurdoch/LavaMoat/issues/1787)) ([0c8fc19](https://github.com/davidmurdoch/LavaMoat/commit/0c8fc1914e0e7a8432edbf6d9e8d2604ee17d291))
+* **webpack:** preserve source maps correctnes when SES is inlined ([#1932](https://github.com/davidmurdoch/LavaMoat/issues/1932)) ([23bcc79](https://github.com/davidmurdoch/LavaMoat/commit/23bcc79e9dc8190fbaaee4107b0a7af90417faf6))
+* **webpack:** reproducible builds require runtime to be stable on unstable input ordering ([#2014](https://github.com/davidmurdoch/LavaMoat/issues/2014)) ([798651c](https://github.com/davidmurdoch/LavaMoat/commit/798651c21f46c1db01ab69322126514d87c52f22))
+* **webpack:** strip policy meta from the policy that goes into the bundle, fix related tests ([645d0f2](https://github.com/davidmurdoch/LavaMoat/commit/645d0f2311a9871694b6bf14bb4ce3c81b2311c8))
+* **webpack:** undo the forced overwrite of parent and top references ([#1666](https://github.com/davidmurdoch/LavaMoat/issues/1666)) ([adec627](https://github.com/davidmurdoch/LavaMoat/commit/adec627069e201a7353a89876d0964dd54e1fa9b))
+
+
+### Performance Improvements
+
+* **webpack:** index module resource lookups ([5d3f78d](https://github.com/davidmurdoch/LavaMoat/commit/5d3f78d73ec0dc5fdf0ed5e5f6a3e2b3cdd5c6fa))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @lavamoat/aa bumped from ^5.0.1 to ^6.0.0
+    * @lavamoat/types bumped from ^2.0.0 to ^3.0.0
+    * lavamoat-core bumped from ^19.0.1 to ^20.0.0
+
 ## [3.0.1](https://github.com/LavaMoat/LavaMoat/compare/webpack-v3.0.0...webpack-v3.0.1) (2026-10-08)
 
 

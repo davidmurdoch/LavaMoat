@@ -33,6 +33,39 @@
     * @lavamoat/lavapack bumped from ^6.1.1 to ^6.1.2
     * lavamoat-core bumped from ^15.2.0 to ^15.2.1
 
+## [21.0.0](https://github.com/davidmurdoch/LavaMoat/compare/lavamoat-browserify-v20.0.9...lavamoat-browserify-v21.0.0) (2026-11-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node.js v18 is no longer supported.
+* indicate breaking change propagation: stop overwriting the policy file while loading. ([#1835](https://github.com/davidmurdoch/LavaMoat/issues/1835))
+
+### Bug Fixes
+
+* add Node.js v24.0.0 to supported engines ([ad9cdcd](https://github.com/davidmurdoch/LavaMoat/commit/ad9cdcdf83ccbda8bf2eba427d0c80f761f47a0a))
+* add Node.js v26.0.0 to engines ([1b115cd](https://github.com/davidmurdoch/LavaMoat/commit/1b115cd2b69a34aa9c3b2206424231a3e9964086))
+* **browserify,core,lavamoat-node,node:** do not publish extraneous files ([#1866](https://github.com/davidmurdoch/LavaMoat/issues/1866)) ([e7666d8](https://github.com/davidmurdoch/LavaMoat/commit/e7666d804e2f9af71fb0cd948af04a283458b6d1)), closes [#1865](https://github.com/davidmurdoch/LavaMoat/issues/1865)
+* **browserify:** hotfix for incorrect policy validation in lavamoat-browserify ([#1840](https://github.com/davidmurdoch/LavaMoat/issues/1840)) ([a675e4a](https://github.com/davidmurdoch/LavaMoat/commit/a675e4a301816915ddf4fb71e33370974c73ba96))
+* **core:** block circular global object endowments ([#1505](https://github.com/davidmurdoch/LavaMoat/issues/1505)) ([6745a0e](https://github.com/davidmurdoch/LavaMoat/commit/6745a0edee85171e4062aaec31d7f25bf3a97e46))
+* **deps:** update babel monorepo ([afc9fe5](https://github.com/davidmurdoch/LavaMoat/commit/afc9fe5fef98c53abe014ff657a1d4f59883abe8))
+* **deps:** update babel monorepo ([#1680](https://github.com/davidmurdoch/LavaMoat/issues/1680)) ([9739051](https://github.com/davidmurdoch/LavaMoat/commit/973905160650c659b567088aeef9c44ec814fd7c))
+* **deps:** update babel monorepo to v7.29.7 ([#2010](https://github.com/davidmurdoch/LavaMoat/issues/2010)) ([9627a86](https://github.com/davidmurdoch/LavaMoat/commit/9627a86d477d9c70b387b860899a30fbbc0ad479))
+* **deps:** update dependency readable-stream to v4.7.0 ([#1617](https://github.com/davidmurdoch/LavaMoat/issues/1617)) ([9cb1e4b](https://github.com/davidmurdoch/LavaMoat/commit/9cb1e4be3547de0763be5055ac50eb211d658af5))
+* drop Node.js v18 support across the board ([#1886](https://github.com/davidmurdoch/LavaMoat/issues/1886)) ([1190c9b](https://github.com/davidmurdoch/LavaMoat/commit/1190c9b58294abc071eadd7cd14ea11bf63d28b4))
+* indicate breaking change propagation: stop overwriting the policy file while loading. ([#1835](https://github.com/davidmurdoch/LavaMoat/issues/1835)) ([81f2cb0](https://github.com/davidmurdoch/LavaMoat/commit/81f2cb0bf00e61c9ddfb637ad20deacba95ca967))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @lavamoat/aa bumped from ^5.0.1 to ^6.0.0
+    * @lavamoat/lavapack bumped from ^9.0.2 to ^10.0.0
+    * lavamoat-core bumped from ^19.0.1 to ^20.0.0
+  * devDependencies
+    * lavamoat bumped from 11.1.7 to 12.0.0
+
 ## [20.0.9](https://github.com/LavaMoat/LavaMoat/compare/lavamoat-browserify-v20.0.8...lavamoat-browserify-v20.0.9) (2026-10-08)
 
 

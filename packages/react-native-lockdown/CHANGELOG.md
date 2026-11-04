@@ -1,5 +1,32 @@
 # Changelog
 
+## [4.0.0](https://github.com/davidmurdoch/LavaMoat/compare/react-native-lockdown-v3.0.0...react-native-lockdown-v4.0.0) (2026-11-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* **node:** The API of `generatePolicy()` has changed; instead of resolving with a `LavaMoatPolicy`, it now resolves with an object having properties `policy: LavaMoatPolicy` and `hasWarnings: boolean`. This only affects programmatic consumption of `@lavamoat/node`. To migrate, destructure `policy` from the resolved object. `generatePolicy()` no longer accepts `write`/`writableFs`  options and does not write policy to disk; to write a policy, use `writePolicy `imported from `@lavamoat/node`.
+* **react-native-lockdown:** The minimum supported Node.js version range is now `^22.13.1 || ^24.3.0 || ^26.0.0`.
+* Node.js v18 is no longer supported.
+
+### Features
+
+* **node:** use @endo/parser-pipeline ([9fe2cce](https://github.com/davidmurdoch/LavaMoat/commit/9fe2cceb6a969c2df9a5e5511527b7cf4825fb19))
+* **react-native-lockdown:** @lavamoat/react-native-lockdown beta ([074c277](https://github.com/davidmurdoch/LavaMoat/commit/074c2775093e94f6a81da0890aaa66db2700ac5a))
+* **react-native-lockdown:** ses@1.14.0 ([#1737](https://github.com/davidmurdoch/LavaMoat/issues/1737)) ([3926718](https://github.com/davidmurdoch/LavaMoat/commit/3926718ee5b8fc935158d0ad766247c954e89a82))
+* **react-native-lockdown:** use vendored SES version ([#1716](https://github.com/davidmurdoch/LavaMoat/issues/1716)) ([34d8b67](https://github.com/davidmurdoch/LavaMoat/commit/34d8b6766245bf73d5f07f8f970c01400282dc1b))
+
+
+### Bug Fixes
+
+* **deps:** upgrade ses ([83f704a](https://github.com/davidmurdoch/LavaMoat/commit/83f704acbfc175a5bc1837752b3b52e597a0d5ad))
+* **deps:** upgrade ses This upgrades `ses` to v2.3.0 across the board. ([#2111](https://github.com/davidmurdoch/LavaMoat/issues/2111)) ([32d830b](https://github.com/davidmurdoch/LavaMoat/commit/32d830b947c0e9a0fab4195cc9c6083e9b7b3714))
+* **deps:** upgrade ses, @types/node, endo ([c6eca11](https://github.com/davidmurdoch/LavaMoat/commit/c6eca11b3cfc873b7f5776b0d08f6f329b48e490))
+* drop Node.js v18 support across the board ([#1886](https://github.com/davidmurdoch/LavaMoat/issues/1886)) ([1190c9b](https://github.com/davidmurdoch/LavaMoat/commit/1190c9b58294abc071eadd7cd14ea11bf63d28b4))
+* **react-native-lockdown:** add types ([a01f6f5](https://github.com/davidmurdoch/LavaMoat/commit/a01f6f5e15c451a34a776adbfaa851846bfd9d9e))
+* **react-native-lockdown:** add vendor directory when creating tarball ([#1728](https://github.com/davidmurdoch/LavaMoat/issues/1728)) ([47d542e](https://github.com/davidmurdoch/LavaMoat/commit/47d542e069253c059d27182d683653f73a9bafd4))
+* **react-native-lockdown:** update engines ([89ca28f](https://github.com/davidmurdoch/LavaMoat/commit/89ca28f02462284f67f0bf40fa3ad2a28572647a))
+
 ## [3.0.0](https://github.com/LavaMoat/LavaMoat/compare/react-native-lockdown-v2.0.0...react-native-lockdown-v3.0.0) (2026-09-24)
 
 

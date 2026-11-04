@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.9.0](https://github.com/davidmurdoch/LavaMoat/compare/harden-v0.8.1...harden-v0.9.0) (2026-11-04)
+
+
+### Features
+
+* @lavamoat/harden ([#2034](https://github.com/davidmurdoch/LavaMoat/issues/2034)) ([70bcb21](https://github.com/davidmurdoch/LavaMoat/commit/70bcb21aa71d8b365a059f3253eba7db81c95dee))
+* **harden:** check --json option ([fa38250](https://github.com/davidmurdoch/LavaMoat/commit/fa38250a19328be9c542b4c909b29e2386657207))
+* **harden:** extend script configs ([#2116](https://github.com/davidmurdoch/LavaMoat/issues/2116)) ([92ef20f](https://github.com/davidmurdoch/LavaMoat/commit/92ef20f65246249a9a1ba327213d23845fdff572))
+* **harden:** runner scriptsConfig wildcard matching by prefix ([399ea12](https://github.com/davidmurdoch/LavaMoat/commit/399ea12d067229ed7666294e38159851732deaa1))
+
+
+### Bug Fixes
+
+* avoid accumulating NODE_OPTIONS ([400a836](https://github.com/davidmurdoch/LavaMoat/commit/400a836bad09d347a7b81b492d8e721a1edef9e7))
+* **deps:** update dependency semver to ^7.8.4 ([#2112](https://github.com/davidmurdoch/LavaMoat/issues/2112)) ([761f969](https://github.com/davidmurdoch/LavaMoat/commit/761f9691bdf5e3527fde2e0aa82cb65b32ab40a9))
+* **deps:** update dependency yaml to ^2.9.0 ([#2113](https://github.com/davidmurdoch/LavaMoat/issues/2113)) ([dc9eaea](https://github.com/davidmurdoch/LavaMoat/commit/dc9eaea6baa593d6bf18dc81f88c960ce74d56bd))
+* **harden:** --allow-fs-tmp needs to explicitly set read and write ([#2104](https://github.com/davidmurdoch/LavaMoat/issues/2104)) ([1d80119](https://github.com/davidmurdoch/LavaMoat/commit/1d80119f5c628227272764dbd72d83618967af35))
+* **harden:** avoid test flakiness by relying less on one run per process ([#2103](https://github.com/davidmurdoch/LavaMoat/issues/2103)) ([7014109](https://github.com/davidmurdoch/LavaMoat/commit/7014109b4758454f2a1175056482b5e14e9e6f3e))
+* **harden:** cleaner PATH handling ([1a0a907](https://github.com/davidmurdoch/LavaMoat/commit/1a0a90753e8e562c1a7bfd01cda65502d7190549))
+* **harden:** improve shell-script location resolution in npm ([#2109](https://github.com/davidmurdoch/LavaMoat/issues/2109)) ([9804a25](https://github.com/davidmurdoch/LavaMoat/commit/9804a25d6a40851507a2b2c691b2474caf1fafec))
+* **harden:** use the project root for `projectRoot` in the Yarn runner plugin ([#2090](https://github.com/davidmurdoch/LavaMoat/issues/2090)) ([8fa1e34](https://github.com/davidmurdoch/LavaMoat/commit/8fa1e34d4a32d5f68aae469bf2453ddf2d9c98f0))
+* **yarn:** avoid attempting to run scripts on yarn update-lockfile mode install ([4d92634](https://github.com/davidmurdoch/LavaMoat/commit/4d92634efa023549793cf1fb0f8beed04482153b))
+
 ## [0.8.1](https://github.com/LavaMoat/LavaMoat/compare/harden-v0.8.0...harden-v0.8.1) (2026-10-08)
 
 

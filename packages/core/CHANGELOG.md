@@ -6,6 +6,76 @@
   * dependencies
     * lavamoat-tofu bumped from ^7.2.1 to ^7.2.2
 
+## [20.0.0](https://github.com/davidmurdoch/LavaMoat/compare/lavamoat-core-v19.0.1...lavamoat-core-v20.0.0) (2026-11-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* **core:** support expanded LavaMoatPolicy.include
+* **node:** The API of `generatePolicy()` has changed; instead of resolving with a `LavaMoatPolicy`, it now resolves with an object having properties `policy: LavaMoatPolicy` and `hasWarnings: boolean`. This only affects programmatic consumption of `@lavamoat/node`. To migrate, destructure `policy` from the resolved object. `generatePolicy()` no longer accepts `write`/`writableFs`  options and does not write policy to disk; to write a policy, use `writePolicy `imported from `@lavamoat/node`.
+* Node.js v18 is no longer supported.
+* **core:** stop overwriting the policy file while loading. ([#1835](https://github.com/davidmurdoch/LavaMoat/issues/1835))
+
+### Features
+
+* **core:** add "redefine" global policy value to schema ([09d78ba](https://github.com/davidmurdoch/LavaMoat/commit/09d78badd3b3cc2e982ce690e84133d9959f43b2)), closes [#1583](https://github.com/davidmurdoch/LavaMoat/issues/1583)
+* **core:** add informative errors when the result of policy merge contains invalid entries ([#1848](https://github.com/davidmurdoch/LavaMoat/issues/1848)) ([fefd457](https://github.com/davidmurdoch/LavaMoat/commit/fefd457d53c2944fe3d2ee719cd741f5eafb8987))
+* **core:** export MODULE_REFS constant; fix strict mode in function wrapper ([338caaf](https://github.com/davidmurdoch/LavaMoat/commit/338caaf82a2beae7273ff65c3828796e99a4b227))
+* **core:** expose policy override compact function ([bf19d9d](https://github.com/davidmurdoch/LavaMoat/commit/bf19d9d283d03910d5e8ec95ab5ae3940a7fa24d))
+* **core:** relax scuttling by skipping intrinsics ([#1645](https://github.com/davidmurdoch/LavaMoat/issues/1645)) ([5040521](https://github.com/davidmurdoch/LavaMoat/commit/5040521a089e10a03dcb882d37b0129b8d64a2c3))
+* **core:** support expanded LavaMoatPolicy.include ([1fd71be](https://github.com/davidmurdoch/LavaMoat/commit/1fd71bec09835802da87691b93e56cf964a27630))
+* **core:** support Firefox contentscript shenanigans with cross-realm window prototypes ([#1786](https://github.com/davidmurdoch/LavaMoat/issues/1786)) ([271598f](https://github.com/davidmurdoch/LavaMoat/commit/271598f59161ba83f525a3d340916b32e6f4a96a))
+* **core:** support untrusted entrypoints ([36018de](https://github.com/davidmurdoch/LavaMoat/commit/36018dea2bbe9b7d16588e0333974dd98ee2d02d))
+* **node:** add support in scuttling ([#1627](https://github.com/davidmurdoch/LavaMoat/issues/1627)) ([587644f](https://github.com/davidmurdoch/LavaMoat/commit/587644fb8ec59499b181d0e8c8d2660257d04015))
+* **node:** use @endo/parser-pipeline ([9fe2cce](https://github.com/davidmurdoch/LavaMoat/commit/9fe2cceb6a969c2df9a5e5511527b7cf4825fb19))
+* **webpack:** document and officially release scuttling in webpack plugin ([#1829](https://github.com/davidmurdoch/LavaMoat/issues/1829)) ([9c83030](https://github.com/davidmurdoch/LavaMoat/commit/9c83030d97371478bf59b10d636e63168bd8473d))
+
+
+### Bug Fixes
+
+* add Node.js v24.0.0 to supported engines ([ad9cdcd](https://github.com/davidmurdoch/LavaMoat/commit/ad9cdcdf83ccbda8bf2eba427d0c80f761f47a0a))
+* add Node.js v26.0.0 to engines ([1b115cd](https://github.com/davidmurdoch/LavaMoat/commit/1b115cd2b69a34aa9c3b2206424231a3e9964086))
+* avoid touching experimental localStorage API, fix scuttling tests ([5d65bff](https://github.com/davidmurdoch/LavaMoat/commit/5d65bfff756561b72def44404b17ad421a55955a))
+* **browserify,core,lavamoat-node,node:** do not publish extraneous files ([#1866](https://github.com/davidmurdoch/LavaMoat/issues/1866)) ([e7666d8](https://github.com/davidmurdoch/LavaMoat/commit/e7666d804e2f9af71fb0cd948af04a283458b6d1)), closes [#1865](https://github.com/davidmurdoch/LavaMoat/issues/1865)
+* **core,webpack:** remove deprecated lockdown options ([efec539](https://github.com/davidmurdoch/LavaMoat/commit/efec5391eec838689ce2426de617571d0f276f2c)), closes [#1578](https://github.com/davidmurdoch/LavaMoat/issues/1578)
+* **core:** Avoid disruptive errors when a scuttled global is accessed by Chrome itself ([#2126](https://github.com/davidmurdoch/LavaMoat/issues/2126)) ([8c37400](https://github.com/davidmurdoch/LavaMoat/commit/8c3740059c89a0c8e3e14ccd216febe08b3c3bf9))
+* **core:** block circular global object endowments ([#1505](https://github.com/davidmurdoch/LavaMoat/issues/1505)) ([6745a0e](https://github.com/davidmurdoch/LavaMoat/commit/6745a0edee85171e4062aaec31d7f25bf3a97e46))
+* **core:** fix policy narrowing logic in the policy merge  ([#1843](https://github.com/davidmurdoch/LavaMoat/issues/1843)) ([ea5f3d4](https://github.com/davidmurdoch/LavaMoat/commit/ea5f3d46aa8db8ee8e51115ca4b46c5fd00a89b6))
+* **core:** make the wrapper for global functions strict ([#1898](https://github.com/davidmurdoch/LavaMoat/issues/1898)) ([8c0205c](https://github.com/davidmurdoch/LavaMoat/commit/8c0205c5bbc0a6f70a6a86073f9b9d9ef100421f))
+* **core:** move dependency execute after policy check ([#1974](https://github.com/davidmurdoch/LavaMoat/issues/1974)) ([886e82f](https://github.com/davidmurdoch/LavaMoat/commit/886e82fab62969d4fa45d974796dee45c1e37092))
+* **core:** noSharedPrototype case in copyWrappedGlobals must include non-enumerable properties ([592f96e](https://github.com/davidmurdoch/LavaMoat/commit/592f96e1291aa31cfd6942493e40563b8680b871))
+* **core:** prevent the endowment logic from skipping writable fields ([#2081](https://github.com/davidmurdoch/LavaMoat/issues/2081)) ([68118ab](https://github.com/davidmurdoch/LavaMoat/commit/68118ab3f8dc7e839ad0241fc01b02077134fce7))
+* **core:** replace merge-deep with bespoke policy merge implementation ([#1909](https://github.com/davidmurdoch/LavaMoat/issues/1909)) ([1eb97f6](https://github.com/davidmurdoch/LavaMoat/commit/1eb97f6e92e55377d76aafcd8c9df47fbaa233a4))
+* **core:** stop overwriting the policy file while loading. ([#1835](https://github.com/davidmurdoch/LavaMoat/issues/1835)) ([db57c1c](https://github.com/davidmurdoch/LavaMoat/commit/db57c1c3a8a8822733b887edec633e3ce1f1177a))
+* **core:** transfer prototype over to a wraped function ([#1847](https://github.com/davidmurdoch/LavaMoat/issues/1847)) ([14e3c66](https://github.com/davidmurdoch/LavaMoat/commit/14e3c66957a8700fbf3a423e67f5785e7172e008))
+* **core:** untangle another tsc confusion in generating .d.ts files ([#1867](https://github.com/davidmurdoch/LavaMoat/issues/1867)) ([5ce9b96](https://github.com/davidmurdoch/LavaMoat/commit/5ce9b9613d5b1601f24a320a07e7e8eccb96aa18))
+* **deps:** update babel monorepo ([afc9fe5](https://github.com/davidmurdoch/LavaMoat/commit/afc9fe5fef98c53abe014ff657a1d4f59883abe8))
+* **deps:** update babel monorepo ([#1680](https://github.com/davidmurdoch/LavaMoat/issues/1680)) ([9739051](https://github.com/davidmurdoch/LavaMoat/commit/973905160650c659b567088aeef9c44ec814fd7c))
+* **deps:** update babel monorepo to v7.26.10 ([#1561](https://github.com/davidmurdoch/LavaMoat/issues/1561)) ([2757717](https://github.com/davidmurdoch/LavaMoat/commit/275771754578647346da1ece0f86afaabdd5de36))
+* **deps:** update babel monorepo to v7.26.9 ([6a9dc73](https://github.com/davidmurdoch/LavaMoat/commit/6a9dc735f18a5b95e82b86ec2bd466ee4433172f))
+* **deps:** update babel monorepo to v7.27.0 ([#1589](https://github.com/davidmurdoch/LavaMoat/issues/1589)) ([efd83d7](https://github.com/davidmurdoch/LavaMoat/commit/efd83d7ea7a5f5f9d2157248d4e2f8b7f9c48c56))
+* **deps:** update babel monorepo to v7.27.3 ([#1672](https://github.com/davidmurdoch/LavaMoat/issues/1672)) ([72cb642](https://github.com/davidmurdoch/LavaMoat/commit/72cb6424bb5acb16655562deaefff8ef2cf2168e))
+* **deps:** update babel monorepo to v7.29.7 ([#2010](https://github.com/davidmurdoch/LavaMoat/issues/2010)) ([9627a86](https://github.com/davidmurdoch/LavaMoat/commit/9627a86d477d9c70b387b860899a30fbbc0ad479))
+* **deps:** update definitelytyped ([#1574](https://github.com/davidmurdoch/LavaMoat/issues/1574)) ([6c2d54e](https://github.com/davidmurdoch/LavaMoat/commit/6c2d54e851ea24a9482a52018b5e0d84716f87b6))
+* **deps:** update dependency json-stable-stringify to v1.3.0 ([#1613](https://github.com/davidmurdoch/LavaMoat/issues/1613)) ([f9314d1](https://github.com/davidmurdoch/LavaMoat/commit/f9314d1a238d31a0164356c1c6bd6f6e36246d56))
+* **deps:** update dependency ses to v1.12.0 [security] ([#1605](https://github.com/davidmurdoch/LavaMoat/issues/1605)) ([881ae86](https://github.com/davidmurdoch/LavaMoat/commit/881ae86b9a4c27ab60a3c76a4a69f5de246eb2ed))
+* **deps:** update dependency ses to v1.14.0 ([#1746](https://github.com/davidmurdoch/LavaMoat/issues/1746)) ([3e4b834](https://github.com/davidmurdoch/LavaMoat/commit/3e4b834df3430d9f919e7df31f42d23e9b6bb352))
+* **deps:** upgrade ses ([83f704a](https://github.com/davidmurdoch/LavaMoat/commit/83f704acbfc175a5bc1837752b3b52e597a0d5ad))
+* **deps:** upgrade ses This upgrades `ses` to v2.3.0 across the board. ([#2111](https://github.com/davidmurdoch/LavaMoat/issues/2111)) ([32d830b](https://github.com/davidmurdoch/LavaMoat/commit/32d830b947c0e9a0fab4195cc9c6083e9b7b3714))
+* **deps:** upgrade ses, @types/node, endo ([c6eca11](https://github.com/davidmurdoch/LavaMoat/commit/c6eca11b3cfc873b7f5776b0d08f6f329b48e490))
+* drop Node.js v18 support across the board ([#1886](https://github.com/davidmurdoch/LavaMoat/issues/1886)) ([1190c9b](https://github.com/davidmurdoch/LavaMoat/commit/1190c9b58294abc071eadd7cd14ea11bf63d28b4))
+* ensure internal sequence of specifier handling does not leak con… ([#1992](https://github.com/davidmurdoch/LavaMoat/issues/1992)) ([6acf157](https://github.com/davidmurdoch/LavaMoat/commit/6acf157cd43d2855d6d9250c507bda40225e5dab))
+* typescript got confused into creating a cyclic reference in types for scuttling in core ([5e25a36](https://github.com/davidmurdoch/LavaMoat/commit/5e25a361094a7b3ed7ae2744cd405910f9dc3baa))
+* upgrade ses to v1.11.0 ([a12dae1](https://github.com/davidmurdoch/LavaMoat/commit/a12dae13e8c7f70082199ba186659ea413e82ded))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @lavamoat/types bumped from ^2.0.0 to ^3.0.0
+    * lavamoat-tofu bumped from ^9.1.0 to ^10.0.0
+
 ## [19.0.1](https://github.com/LavaMoat/LavaMoat/compare/lavamoat-core-v19.0.0...lavamoat-core-v19.0.1) (2026-10-08)
 
 

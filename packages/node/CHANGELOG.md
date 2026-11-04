@@ -1,5 +1,82 @@
 # Changelog
 
+## [3.0.0](https://github.com/davidmurdoch/LavaMoat/compare/node-v2.0.1...node-v3.0.0) (2026-11-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* **node:** add support for location-based includes
+* **node:** The API of `generatePolicy()` has changed; instead of resolving with a `LavaMoatPolicy`, it now resolves with an object having properties `policy: LavaMoatPolicy` and `hasWarnings: boolean`. This only affects programmatic consumption of `@lavamoat/node`. To migrate, destructure `policy` from the resolved object. `generatePolicy()` no longer accepts `write`/`writableFs`  options and does not write policy to disk; to write a policy, use `writePolicy `imported from `@lavamoat/node`.
+* **node:** major compatibility changes & parallel module inspection
+* Node.js v18 is no longer supported.
+
+### Features
+
+* @lavamoat/harden ([#2034](https://github.com/davidmurdoch/LavaMoat/issues/2034)) ([70bcb21](https://github.com/davidmurdoch/LavaMoat/commit/70bcb21aa71d8b365a059f3253eba7db81c95dee))
+* **git-safe:** increase resilience against network conditions and gi… ([#1766](https://github.com/davidmurdoch/LavaMoat/issues/1766)) ([5a6f9f7](https://github.com/davidmurdoch/LavaMoat/commit/5a6f9f73f3ee9a791bbbf2c5426d4403d2f9882a))
+* **node:** add custom errors ([255aef2](https://github.com/davidmurdoch/LavaMoat/commit/255aef20ff51a041430c5409704e93c6b1c8f6cd))
+* **node:** add support for location-based includes ([a6edddd](https://github.com/davidmurdoch/LavaMoat/commit/a6edddd8a2488fe3c0b6a6a78e3959b0f7ee1a18))
+* **node:** add support in scuttling ([#1627](https://github.com/davidmurdoch/LavaMoat/issues/1627)) ([587644f](https://github.com/davidmurdoch/LavaMoat/commit/587644fb8ec59499b181d0e8c8d2660257d04015))
+* **node:** major compatibility changes & parallel module inspection ([68e6a12](https://github.com/davidmurdoch/LavaMoat/commit/68e6a128418a5c5d150983a84f6636774e0ba80c))
+* **node:** support untrusted entrypoints ([fa2b46e](https://github.com/davidmurdoch/LavaMoat/commit/fa2b46e2a66fdf45e5f1868d6fdfb76fbcc2ca0e))
+* **node:** use @endo/parser-pipeline ([9fe2cce](https://github.com/davidmurdoch/LavaMoat/commit/9fe2cceb6a969c2df9a5e5511527b7cf4825fb19))
+
+
+### Bug Fixes
+
+* add Node.js v24.0.0 to supported engines ([ad9cdcd](https://github.com/davidmurdoch/LavaMoat/commit/ad9cdcdf83ccbda8bf2eba427d0c80f761f47a0a))
+* add Node.js v26.0.0 to engines ([1b115cd](https://github.com/davidmurdoch/LavaMoat/commit/1b115cd2b69a34aa9c3b2206424231a3e9964086))
+* avoid touching experimental localStorage API, fix scuttling tests ([5d65bff](https://github.com/davidmurdoch/LavaMoat/commit/5d65bfff756561b72def44404b17ad421a55955a))
+* **browserify,core,lavamoat-node,node:** do not publish extraneous files ([#1866](https://github.com/davidmurdoch/LavaMoat/issues/1866)) ([e7666d8](https://github.com/davidmurdoch/LavaMoat/commit/e7666d804e2f9af71fb0cd948af04a283458b6d1)), closes [#1865](https://github.com/davidmurdoch/LavaMoat/issues/1865)
+* Bump yargs ([#2027](https://github.com/davidmurdoch/LavaMoat/issues/2027)) ([affd672](https://github.com/davidmurdoch/LavaMoat/commit/affd6727aa29111456676eda65e40303da621f62))
+* **deps:** update babel monorepo ([#1680](https://github.com/davidmurdoch/LavaMoat/issues/1680)) ([9739051](https://github.com/davidmurdoch/LavaMoat/commit/973905160650c659b567088aeef9c44ec814fd7c))
+* **deps:** update babel monorepo ([#1982](https://github.com/davidmurdoch/LavaMoat/issues/1982)) ([5b375cb](https://github.com/davidmurdoch/LavaMoat/commit/5b375cb85d85bc3e37962eae5836b67de9ed474c))
+* **deps:** update babel monorepo to v7.29.7 ([#2010](https://github.com/davidmurdoch/LavaMoat/issues/2010)) ([9627a86](https://github.com/davidmurdoch/LavaMoat/commit/9627a86d477d9c70b387b860899a30fbbc0ad479))
+* **deps:** update definitelytyped ([2eab347](https://github.com/davidmurdoch/LavaMoat/commit/2eab34797e14fa0ff2d2b0aa6fd1ec77cc490900))
+* **deps:** update definitelytyped ([#1574](https://github.com/davidmurdoch/LavaMoat/issues/1574)) ([6c2d54e](https://github.com/davidmurdoch/LavaMoat/commit/6c2d54e851ea24a9482a52018b5e0d84716f87b6))
+* **deps:** update definitelytyped ([#2073](https://github.com/davidmurdoch/LavaMoat/issues/2073)) ([b7aae4f](https://github.com/davidmurdoch/LavaMoat/commit/b7aae4fad24829323cd52c14ed5f45acd5748ae4))
+* **deps:** update dependency @endo/compartment-mapper to v1.6.1 ([b175b93](https://github.com/davidmurdoch/LavaMoat/commit/b175b93b084c4d45d7640e08b1e1db1f313a4ac9))
+* **deps:** update dependency @endo/compartment-mapper to v1.6.2 ([#1731](https://github.com/davidmurdoch/LavaMoat/issues/1731)) ([57d2f88](https://github.com/davidmurdoch/LavaMoat/commit/57d2f88f143aece01e7ef5c355c536e0a9ccef18))
+* **deps:** update dependency @endo/compartment-mapper to v2.1.0 ([#1962](https://github.com/davidmurdoch/LavaMoat/issues/1962)) ([6bbdddd](https://github.com/davidmurdoch/LavaMoat/commit/6bbdddd2ad8791184df2db030d6cdc5ec92bbaed))
+* **deps:** update dependency @endo/evasive-transform to v2 ([#1692](https://github.com/davidmurdoch/LavaMoat/issues/1692)) ([07b1942](https://github.com/davidmurdoch/LavaMoat/commit/07b19423c1df12968cab02a2eb042e450e931e9f))
+* **deps:** update dependency @types/node to v18.19.100 ([#1646](https://github.com/davidmurdoch/LavaMoat/issues/1646)) ([90c25d3](https://github.com/davidmurdoch/LavaMoat/commit/90c25d38be61911ea3056756046eafa456236d76))
+* **deps:** update dependency @types/node to v18.19.104 ([#1669](https://github.com/davidmurdoch/LavaMoat/issues/1669)) ([0b3461b](https://github.com/davidmurdoch/LavaMoat/commit/0b3461bc265cd543d7255d81283e9ecf59fac765))
+* **deps:** update dependency @types/node to v18.19.105 ([#1675](https://github.com/davidmurdoch/LavaMoat/issues/1675)) ([45b9cff](https://github.com/davidmurdoch/LavaMoat/commit/45b9cff7ebec1e7c5875ffe51a511ab699b6ab64))
+* **deps:** update dependency @types/node to v18.19.110 ([#1678](https://github.com/davidmurdoch/LavaMoat/issues/1678)) ([fd16808](https://github.com/davidmurdoch/LavaMoat/commit/fd16808eb7aa9ea08e446845857a4fbd33cf2bab))
+* **deps:** update dependency @types/node to v18.19.111 ([#1695](https://github.com/davidmurdoch/LavaMoat/issues/1695)) ([2882276](https://github.com/davidmurdoch/LavaMoat/commit/2882276a8605183b37bbf513e1ee181f888b74f2))
+* **deps:** update dependency @types/node to v18.19.112 ([#1715](https://github.com/davidmurdoch/LavaMoat/issues/1715)) ([8a48b61](https://github.com/davidmurdoch/LavaMoat/commit/8a48b613876b2acc4358d33f7cb0ffd4cdb7dc80))
+* **deps:** update dependency @types/node to v18.19.87 ([#1615](https://github.com/davidmurdoch/LavaMoat/issues/1615)) ([629cfa7](https://github.com/davidmurdoch/LavaMoat/commit/629cfa7cbbede9a7cf52255daf679e1cc6d98771))
+* **deps:** update dependency @types/node to v20.19.37 ([#1919](https://github.com/davidmurdoch/LavaMoat/issues/1919)) ([641ab36](https://github.com/davidmurdoch/LavaMoat/commit/641ab3627a3064fbf4fdd1c1b446c7fca6ee9ff7))
+* **deps:** update dependency @types/node to v20.19.39 ([#1942](https://github.com/davidmurdoch/LavaMoat/issues/1942)) ([6807d68](https://github.com/davidmurdoch/LavaMoat/commit/6807d68c244b45f8b5bb53979d5d3f08fe188aec))
+* **deps:** update dependency @types/node to v20.19.41 ([#1983](https://github.com/davidmurdoch/LavaMoat/issues/1983)) ([3fad831](https://github.com/davidmurdoch/LavaMoat/commit/3fad831c95de9cdaed0307aebe710083c94bf5c4))
+* **deps:** update dependency @types/node to v22.20.0 ([#2039](https://github.com/davidmurdoch/LavaMoat/issues/2039)) ([fc95da2](https://github.com/davidmurdoch/LavaMoat/commit/fc95da29f26fbe4fa8ea06645ba53c43b7963a7b))
+* **deps:** update dependency json-stable-stringify to v1.3.0 ([#1613](https://github.com/davidmurdoch/LavaMoat/issues/1613)) ([f9314d1](https://github.com/davidmurdoch/LavaMoat/commit/f9314d1a238d31a0164356c1c6bd6f6e36246d56))
+* **deps:** update dependency ses to v1.12.0 [security] ([#1605](https://github.com/davidmurdoch/LavaMoat/issues/1605)) ([881ae86](https://github.com/davidmurdoch/LavaMoat/commit/881ae86b9a4c27ab60a3c76a4a69f5de246eb2ed))
+* **deps:** update dependency ses to v1.14.0 ([#1746](https://github.com/davidmurdoch/LavaMoat/issues/1746)) ([3e4b834](https://github.com/davidmurdoch/LavaMoat/commit/3e4b834df3430d9f919e7df31f42d23e9b6bb352))
+* **deps:** update dependency type-fest to v4.40.0 ([#1619](https://github.com/davidmurdoch/LavaMoat/issues/1619)) ([4e20306](https://github.com/davidmurdoch/LavaMoat/commit/4e20306371ae605fc414dd645b8e422a68c71b93))
+* **deps:** update dependency type-fest to v4.40.1 ([#1624](https://github.com/davidmurdoch/LavaMoat/issues/1624)) ([b918dcc](https://github.com/davidmurdoch/LavaMoat/commit/b918dcc7d7ea2b0a4779eecaa7a853c73ecc5246))
+* **deps:** update dependency type-fest to v4.41.0 ([#1657](https://github.com/davidmurdoch/LavaMoat/issues/1657)) ([19e9bf1](https://github.com/davidmurdoch/LavaMoat/commit/19e9bf144c8c43f530501bc500480fed16f995ac))
+* **deps:** update endo ([#1790](https://github.com/davidmurdoch/LavaMoat/issues/1790)) ([672b3bd](https://github.com/davidmurdoch/LavaMoat/commit/672b3bd4673e7a7c28c043e2c94347d9b4b2e58c))
+* **deps:** update endo ([#2048](https://github.com/davidmurdoch/LavaMoat/issues/2048)) ([e07902b](https://github.com/davidmurdoch/LavaMoat/commit/e07902bf52358578531c81be6095bca0d02e8141))
+* **deps:** upgrade @endo/compartment-mapper, @endo/evasive-transform ([#1588](https://github.com/davidmurdoch/LavaMoat/issues/1588)) ([81fa130](https://github.com/davidmurdoch/LavaMoat/commit/81fa130089e3e6f48d8b6c639392c58fa14fd338))
+* **deps:** upgrade ses ([83f704a](https://github.com/davidmurdoch/LavaMoat/commit/83f704acbfc175a5bc1837752b3b52e597a0d5ad))
+* **deps:** upgrade ses This upgrades `ses` to v2.3.0 across the board. ([#2111](https://github.com/davidmurdoch/LavaMoat/issues/2111)) ([32d830b](https://github.com/davidmurdoch/LavaMoat/commit/32d830b947c0e9a0fab4195cc9c6083e9b7b3714))
+* **deps:** upgrade ses, @types/node, endo ([c6eca11](https://github.com/davidmurdoch/LavaMoat/commit/c6eca11b3cfc873b7f5776b0d08f6f329b48e490))
+* drop Node.js v18 support across the board ([#1886](https://github.com/davidmurdoch/LavaMoat/issues/1886)) ([1190c9b](https://github.com/davidmurdoch/LavaMoat/commit/1190c9b58294abc071eadd7cd14ea11bf63d28b4))
+* **node:** fix corner case where policy override path was guessed incorrectly ([efe4ef7](https://github.com/davidmurdoch/LavaMoat/commit/efe4ef7d0967f05646941444150f61b9ceff40fb))
+* **node:** fix SES policy violation summary formatting ([6b5b371](https://github.com/davidmurdoch/LavaMoat/commit/6b5b3711ba48ec0710e00b122d70682ffe4e30f3))
+* **types:** remove global Object.hasOwn type ([ee9f86b](https://github.com/davidmurdoch/LavaMoat/commit/ee9f86b764b2a18b5863cd769d545692420ebf5a)), closes [#1817](https://github.com/davidmurdoch/LavaMoat/issues/1817)
+* upgrade ses to v1.11.0 ([a12dae1](https://github.com/davidmurdoch/LavaMoat/commit/a12dae13e8c7f70082199ba186659ea413e82ded))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @lavamoat/types bumped from ^2.0.0 to ^3.0.0
+    * lavamoat-core bumped from ^19.0.1 to ^20.0.0
+    * lavamoat-tofu bumped from ^9.1.0 to ^10.0.0
+
 ## [2.0.1](https://github.com/LavaMoat/LavaMoat/compare/node-v2.0.0...node-v2.0.1) (2026-10-08)
 
 

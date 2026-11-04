@@ -1,5 +1,31 @@
 # Changelog
 
+## [2.0.0](https://github.com/davidmurdoch/LavaMoat/compare/git-safe-dependencies-v1.0.3...git-safe-dependencies-v2.0.0) (2026-11-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node.js v18 is no longer supported.
+
+### Features
+
+* **git-safe:** increase resilience against network conditions and gi… ([#1766](https://github.com/davidmurdoch/LavaMoat/issues/1766)) ([5a6f9f7](https://github.com/davidmurdoch/LavaMoat/commit/5a6f9f73f3ee9a791bbbf2c5426d4403d2f9882a))
+
+
+### Bug Fixes
+
+* add Node.js v26.0.0 to engines ([1b115cd](https://github.com/davidmurdoch/LavaMoat/commit/1b115cd2b69a34aa9c3b2206424231a3e9964086))
+* **deps:** fix npm audit issues ([#1853](https://github.com/davidmurdoch/LavaMoat/issues/1853)) ([5ba0f2d](https://github.com/davidmurdoch/LavaMoat/commit/5ba0f2de62aa4feca86d7f96bcce24f76d6aa624))
+* **deps:** update dependency hosted-git-info to v8.1.0 ([#1612](https://github.com/davidmurdoch/LavaMoat/issues/1612)) ([9bc9538](https://github.com/davidmurdoch/LavaMoat/commit/9bc9538fd4dce1141583e57bddd0f05d2e377188))
+* **deps:** update dependency js-yaml to v4.1.1 [security] ([#1851](https://github.com/davidmurdoch/LavaMoat/issues/1851)) ([495b1cf](https://github.com/davidmurdoch/LavaMoat/commit/495b1cf99723260be117950428ece7d0893dc932))
+* **deps:** update dependency js-yaml to v4.2.0 [security] ([#2023](https://github.com/davidmurdoch/LavaMoat/issues/2023)) ([bb5a32d](https://github.com/davidmurdoch/LavaMoat/commit/bb5a32d179fee8f56045c8625229a90e73b81742))
+* **deps:** update dependency js-yaml to v4.3.0 ([#2056](https://github.com/davidmurdoch/LavaMoat/issues/2056)) ([b728385](https://github.com/davidmurdoch/LavaMoat/commit/b728385ec11cb18d4096e07516684388314da7c9))
+* **deps:** update dependency lockfile-lint-api to v5.9.2 ([#1625](https://github.com/davidmurdoch/LavaMoat/issues/1625)) ([5f57d23](https://github.com/davidmurdoch/LavaMoat/commit/5f57d236b09ef86129e63565d1f599bd27aefeb2))
+* **deps:** upgrade js-yaml ([#2099](https://github.com/davidmurdoch/LavaMoat/issues/2099)) ([b775fc7](https://github.com/davidmurdoch/LavaMoat/commit/b775fc7ed7064efe5dbcf45141d69e5a5c15f47d))
+* drop Node.js v18 support across the board ([#1886](https://github.com/davidmurdoch/LavaMoat/issues/1886)) ([1190c9b](https://github.com/davidmurdoch/LavaMoat/commit/1190c9b58294abc071eadd7cd14ea11bf63d28b4))
+* **git-safe:** adapt to github API change ([f5bb92b](https://github.com/davidmurdoch/LavaMoat/commit/f5bb92bfa9ede8347311b3eca7b34dc732460f49))
+* **git-safe:** improve git specifier detection and tests ([#1556](https://github.com/davidmurdoch/LavaMoat/issues/1556)) ([aa36b50](https://github.com/davidmurdoch/LavaMoat/commit/aa36b507fcdc8eda6326bb243a36ae1b7611e6cd))
+
 ## [1.0.3](https://github.com/LavaMoat/LavaMoat/compare/git-safe-dependencies-v1.0.2...git-safe-dependencies-v1.0.3) (2026-09-24)
 
 
